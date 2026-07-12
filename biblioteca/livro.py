@@ -18,9 +18,10 @@ class Livro:
 
     def devolver(self):
         """Registra a devolucao do livro. Levanta erro se ja estiver disponivel."""
-        if self.disponivel:                      # BUG: condicao invertida — deveria ser "not self.disponivel"
+        if not self.disponivel:
+            self.disponivel = True
+        else:
             raise ValueError(f"O livro '{self.titulo}' nao esta emprestado.")
-        self.disponivel = True
 
     def __str__(self):
         status = "Disponivel" if self.disponivel else "Emprestado"

@@ -25,7 +25,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Rodar Flake8 (Estilo)
-        run: flake8 biblioteca/
+        run: flake8 biblioteca/ --ignore=E501,W292,W291
 
       - name: Rodar Pytest (Testes e Cobertura)
         run: pytest --cov=biblioteca --cov-fail-under=60

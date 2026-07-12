@@ -1,4 +1,4 @@
-import re  # noqa - biblioteca de expressoes regulares (deixei aqui sem querer)
+import re  # noqa
 
 
 class Livro:
@@ -11,13 +11,13 @@ class Livro:
         self.disponivel = True
 
     def emprestar(self):
-        """Registra o emprestimo do livro. Levanta erro se ja estiver emprestado."""
+        """Registra o emprestimo."""
         if not self.disponivel:
             raise ValueError(f"O livro '{self.titulo}' ja esta emprestado.")
         self.disponivel = False
 
     def devolver(self):
-        """Registra a devolucao do livro. Levanta erro se ja estiver disponivel."""
+        """Registra a devolucao."""
         if not self.disponivel:
             self.disponivel = True
         else:

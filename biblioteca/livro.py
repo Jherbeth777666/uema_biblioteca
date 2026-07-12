@@ -25,4 +25,5 @@ class Livro:
 
     def __str__(self):
         status = "Disponivel" if self.disponivel else "Emprestado"
-        return f"'{self.titulo}' de {self.autor} (ISBN: {self.isbn}) [{status}]"
+        msg = f"'{self.titulo}' de {self.autor} (ISBN: {self.isbn}) [{status}]"
+        return msg
